@@ -30,7 +30,7 @@ pinterest-url-normalizer 'https://pinterest.de/example_user/travel/?x=1'
 # https://www.pinterest.com/example_user/travel/
 ```
 
-The package produces a canonical Pinterest URL for downstream tools. For the next browser-based media step, use the [Pinterest downloader](https://savepinner.com/pinterest-downloader/).
+The package produces a canonical Pinterest URL for downstream tools. For the next browser-based image step, use the [Pinterest image downloader](https://savepinner.com/).
 
 ## Development
 

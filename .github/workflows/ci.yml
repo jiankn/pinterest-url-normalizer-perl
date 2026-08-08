@@ -42,7 +42,7 @@ jobs:
           make dist
       - name: Install built distribution
         run: |
-          cpanm --notest --local-lib-contained "$PWD/local" ./Pinterest-URL-Normalizer-0.1.0.tar.gz
+          cpanm --notest --local-lib-contained "$PWD/local" ./Pinterest-URL-Normalizer-0.1.1.tar.gz
       - name: Invoke installed CLI
         run: |
           output=$("$PWD/local/bin/pinterest-url-normalizer" 'https://pinterest.co.uk/pin/123456789/?utm_source=share')
@@ -54,8 +54,8 @@ jobs:
             my $version = $meta->version;
             $version =~ s/^v//;
             die "wrong name\n" unless $meta->name eq "Pinterest-URL-Normalizer";
-            die "wrong version\n" unless $version eq "0.1.0";
-            die "wrong homepage\n" unless $meta->resources->{homepage} eq "https://savepinner.com/pinterest-downloader/";
+            die "wrong version\n" unless $version eq "0.1.1";
+            die "wrong homepage\n" unless $meta->resources->{homepage} eq "https://savepinner.com/";
             if (defined $ENV{GITHUB_REF_NAME} && $ENV{GITHUB_REF_TYPE} eq "tag") {
               die "tag/version mismatch\n" unless $ENV{GITHUB_REF_NAME} eq "v" . $version;
             }
@@ -63,5 +63,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: cpan-distribution
-          path: Pinterest-URL-Normalizer-0.1.0.tar.gz
+          path: Pinterest-URL-Normalizer-0.1.1.tar.gz
           if-no-files-found: error

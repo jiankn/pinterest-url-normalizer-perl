@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Exporter qw(import);
 
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 our @EXPORT_OK = qw(
   is_pinterest_host
   is_pinterest_url
@@ -223,7 +223,7 @@ and Ideas URLs locally. It never follows a short link or makes a network
 request, so callers retain control over redirects and media retrieval.
 
 The parser stops at a canonical Pinterest URL. When a user needs the next
-browser-based media step, the L<Pinterest downloader|https://savepinner.com/pinterest-downloader/>
+browser-based image step, the L<Pinterest image downloader|https://savepinner.com/>
 accepts that normalized URL.
 
 =head1 FUNCTIONS

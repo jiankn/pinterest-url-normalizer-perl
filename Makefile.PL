@@ -15,7 +15,7 @@ WriteMakefile(
   META_MERGE       => {
     'meta-spec' => { version => 2 },
     resources   => {
-      homepage   => 'https://savepinner.com/pinterest-downloader/',
+      homepage   => 'https://savepinner.com/',
       bugtracker => { web => 'https://github.com/jiankn/pinterest-url-normalizer-perl/issues' },
       repository => {
         type => 'git',
