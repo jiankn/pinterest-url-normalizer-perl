@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+
+use 5.014;
+use strict;
+use warnings;
+use Pinterest::URL::Normalizer qw(normalize_pinterest_url);
+
+if (@ARGV != 1) {
+  print STDERR "Usage: pinterest-url-normalizer <https-url>\n";
+  exit 2;
+}
+
+my $normalized = eval { normalize_pinterest_url($ARGV[0]) };
+if (!$normalized) {
+  my $error = $@ || 'Unknown normalization error';
+  chomp $error;
+  print STDERR "$error\n";
+  exit 1;
+}
+
+print "$normalized\n";

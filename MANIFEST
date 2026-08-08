@@ -1,0 +1,8 @@
+Changes
+LICENSE
+Makefile.PL
+MANIFEST
+README.md
+bin/pinterest-url-normalizer
+lib/Pinterest/URL/Normalizer.pm
+t/normalizer.t

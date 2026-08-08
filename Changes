@@ -1,0 +1,7 @@
+Revision history for Pinterest-URL-Normalizer
+
+0.1.0  2026-08-08
+    - First public release.
+    - Parse and normalize Pin, short, profile, board, and Ideas URLs.
+    - Support canonical, mobile, regional-subdomain, and country-domain hosts.
+    - Include a network-free command-line interface.
