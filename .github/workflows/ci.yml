@@ -51,11 +51,13 @@ jobs:
         run: |
           PERL5LIB="$PWD/local/lib/perl5" perl -MCPAN::Meta -e '
             my $meta = CPAN::Meta->load_file("MYMETA.json");
+            my $version = $meta->version;
+            $version =~ s/^v//;
             die "wrong name\n" unless $meta->name eq "Pinterest-URL-Normalizer";
-            die "wrong version\n" unless $meta->version eq "0.1.0";
+            die "wrong version\n" unless $version eq "0.1.0";
             die "wrong homepage\n" unless $meta->resources->{homepage} eq "https://savepinner.com/pinterest-downloader/";
             if (defined $ENV{GITHUB_REF_NAME} && $ENV{GITHUB_REF_TYPE} eq "tag") {
-              die "tag/version mismatch\n" unless $ENV{GITHUB_REF_NAME} eq "v" . $meta->version;
+              die "tag/version mismatch\n" unless $ENV{GITHUB_REF_NAME} eq "v" . $version;
             }
           '
       - uses: actions/upload-artifact@v4
